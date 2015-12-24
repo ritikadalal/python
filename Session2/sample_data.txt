@@ -1,0 +1,11 @@
+1, Chicken, 1.00
+18, Capsicum, 0.50
+72, Onion, 0.25
+4, Sausage, 1.50
+92, Green Chillies, 0.75
+33, Olives, 0.75
+12, Tomato, 0.50
+74, Corn, 0.25
+13, Mushroom, 0.75
+36, Jalapenos, 0.50
+75, Pepperoni, 1.00
