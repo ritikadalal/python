@@ -1,6 +1,6 @@
 """
 author: vishal singh kushwaha
-Purpose: This script is an iteractive version of same problem statement. It takes topping options from user and process
+Purpose: This script is an interactive version of same problem statement. It takes topping options from user and process
           the input to do the calculations and print a bill.
 Concepts used:
                 file I/O
@@ -44,23 +44,26 @@ for key, value in myDict.iteritems():
 print '*' * 24 + '\n'
 
 # take user inputs, check for invalid inputs and handle wrong inputs
+toppingCost = 0
 while True:
-    toppingCost = 0
+    # toppingCost = 0
     ans = raw_input("Enter list of your toppings separated by ' '(a space) and press enter: ").lower()
     print '\n'
     if len(ans) == 0:  # if user selects no options give message
         print 'Enter at least one topping'
     else:
-        try:  # if user makes a choice which is not a key in dictionary, appropriate message should be displayed
+        # try:  # if user makes a choice which is not a key in dictionary, appropriate message should be displayed
             ans = ans.split(' ')
             if set(ans) < set(myDict.keys()):  # print header only if user input is a subset of keys in dictionary
                 print 'BILL'.center(24, '*')
-            for item in ans:
-                toppingCost += myDict[item]
-                print "{:<18} {:<5}".format(item, myDict[item])
-            break
-        except KeyError:  # https://docs.python.org/2/tutorial/errors.html#handling-exceptions
-            print 'Invalid input, typo found'
+                for item in ans:
+                    toppingCost += myDict[item]
+                    print "{:<18} {:<5}".format(item, myDict[item])
+                break
+            else:
+                print 'Invalid input, typo found'
+        # except KeyError:  # https://docs.python.org/2/tutorial/errors.html#handling-exceptions
+            # print 'Invalid input, typo found'
 
 print "{:<18} {:<5}".format('Base cost ', str(baseCost))
 print '*' * 24
